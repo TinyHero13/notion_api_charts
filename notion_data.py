@@ -1,14 +1,11 @@
 import requests
 import pandas as pd
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
+import streamlit as st
 
 class Notion():
     def __init__(self):
-        self.token = os.getenv("TOKEN")
-        self.databaseID = os.getenv("DATABASEID")
+        self.token = st.secrets["TOKEN"]
+        self.databaseID = st.secrets["DATABASEID"]
         self.headers = {
                 "Authorization": "Bearer " + self.token,
                 "Content-Type": "application/json",
