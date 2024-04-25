@@ -1,8 +1,10 @@
 import streamlit as st
 import plotly.express as px
-from notion_data import dataframe_notion
+from notion_data import Notion
 
-df_notion = dataframe_notion()
+notion = Notion()
+
+df_notion = notion.dataframe_notion()
 
 st.text('Notion bookmark overview')
 
